@@ -1,0 +1,2 @@
+model_checkpoint_path: "E:\\storage_data\\documents\\code\\web\\projects\\digit-recoginze\\model\\saved_model"
+all_model_checkpoint_paths: "E:\\storage_data\\documents\\code\\web\\projects\\digit-recoginze\\model\\saved_model"

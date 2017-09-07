@@ -1,0 +1,15 @@
+{
+  "name": "draw-together",
+  "version": "1.0.0",
+  "description": "Socket drawing app, cross platform and web and desktop",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Hannes",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4"
+  }
+}
