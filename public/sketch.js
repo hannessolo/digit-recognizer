@@ -17,7 +17,7 @@ function mouseDragged() {
 }
 
 function mouseReleased() {
-  if(mouseX > 0 && mouseX < width * scale && mouseY > 0 && mouseX < height * scale){
+  if(mouseX > 0 && mouseX < width * scale && mouseY > 0 && mouseY < height * scale){
     loadPixels();
 
     let ary = [];
