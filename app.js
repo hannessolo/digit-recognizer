@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const spawn = require('child_process').spawn;
 const bodyParser = require('body-parser');
+const path = require('path');
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
