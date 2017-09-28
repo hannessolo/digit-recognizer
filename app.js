@@ -31,9 +31,9 @@ app.post('/api', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.redirect('/sketch.html');
+  res.sendFile(path.resolve(__dirname, 'public', 'sketch.html'));
 });
 
-var server = app.listen(3000, () => {
-  console.log('Server on port 3000');
+var server = app.listen(3002, () => {
+  console.log('Server on port 3002');
 });

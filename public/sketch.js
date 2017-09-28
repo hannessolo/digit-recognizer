@@ -38,7 +38,7 @@ function mouseReleased() {
       }
 
     document.getElementById("result").innerHTML = 'Loading...';
-    fetch('http://localhost:3000/api', {
+    fetch('http://hanneshertach.me/digitrecognize/api', {
       headers: {
         'Content-Type': 'application/json'
       },
