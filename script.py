@@ -74,14 +74,14 @@ if sys.argv[1] == 'train':
 
     print(sess.run(accuracy, test_data))
 
-    saver.save(sess, os.path.dirname(os.path.realpath(__file__))+'\model\saved_model')
+    saver.save(sess, os.path.dirname(os.path.realpath(__file__))+'/model/saved_model')
 
     test_val = testing_data.next_batch(5, conv=True)
     print(sess.run(Y, feed_dict={X: test_val['x'], Y: test_val['y']})[4])
 
 else:
 
-    saver.restore(sess, os.path.dirname(os.path.realpath(__file__))+'\model\saved_model')
+    saver.restore(sess, os.path.dirname(os.path.realpath(__file__))+'/model/saved_model')
     array = sys.argv[1].split(',')
     array = (numpy.asfarray(array) / 255 * 0.99 ) + 0.01
     result = sess.run(Y, feed_dict={X: array.reshape([1,28,28,1])})
