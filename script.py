@@ -1,7 +1,6 @@
 import sys
 import os
 import numpy
-import matplotlib.pyplot as plt
 import tensorflow as tf
 from mnist_data import Data
 
@@ -75,19 +74,16 @@ if sys.argv[1] == 'train':
 
     print(sess.run(accuracy, test_data))
 
-    saver.save(sess, os.path.dirname(os.path.realpath(__file__))+'\model\saved_model')
+    saver.save(sess, os.path.join(os.path.dirname(os.path.realpath(__file__)), "model", "saved_model"))
 
     test_val = testing_data.next_batch(5, conv=True)
     print(sess.run(Y, feed_dict={X: test_val['x'], Y: test_val['y']})[4])
-    plt.imshow(test_val['x'][4].reshape((28, 28)), cmap='Greys', interpolation='None')
 
 else:
 
-    saver.restore(sess, os.path.dirname(os.path.realpath(__file__))+'\model\saved_model')
+    saver.restore(sess, os.path.join(os.path.dirname(os.path.realpath(__file__)), 'model', 'saved_model'))
     array = sys.argv[1].split(',')
     array = (numpy.asfarray(array) / 255 * 0.99 ) + 0.01
-    #plt.imshow(array.reshape((28, 28)), cmap='Greys', interpolation='None')
     result = sess.run(Y, feed_dict={X: array.reshape([1,28,28,1])})
     print(numpy.argmax(result, 1)[0])
 sess.close()
-#plt.show()
